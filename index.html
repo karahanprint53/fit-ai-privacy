@@ -329,6 +329,59 @@
 
     .callout p { margin: 0; color: #7a271a; font-size: 0.93rem; }
 
+    .medical-alert {
+      background: linear-gradient(135deg, #fff8eb 0%, #fff3d6 100%);
+      border: 1px solid #f0c36d;
+      border-left: 5px solid #c47f0a;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(196, 127, 10, 0.12);
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .medical-alert .alert-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "Outfit", sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #7a4a00;
+      margin-bottom: 0.45rem;
+    }
+
+    .medical-alert .alert-title span.icon {
+      display: inline-grid;
+      place-items: center;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      background: #c47f0a;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .medical-alert p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #5c3d0a;
+      line-height: 1.6;
+    }
+
+    .note-box {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+    }
+
+    .note-box strong { color: var(--ink); }
+
     .two-col {
       display: grid;
       gap: 1rem;
@@ -423,6 +476,20 @@
       </p>
     </header>
 
+    <aside class="medical-alert" role="note" aria-label="Tıbbi uyarı">
+      <div class="alert-title">
+        <span class="icon" aria-hidden="true">!</span>
+        Tıbbi Uyarı
+      </div>
+      <p>
+        Fit AI tarafından sunulan yapay zeka tabanlı analiz, beslenme önerileri,
+        vücut görseli ve tahlil yorumları yalnızca bilgilendirme ve farkındalık
+        amaçlıdır. Tıbbi teşhis, tedavi veya profesyonel sağlık hizmetinin yerine
+        geçmez. Sağlığınızla ilgili tüm kararlar için yetkili bir sağlık
+        uzmanına/hekime danışınız.
+      </p>
+    </aside>
+
     <div class="tabs" role="tablist" aria-label="Gizlilik bölümleri">
       <button
         type="button"
@@ -466,22 +533,25 @@
           <p>
             Fit AI, hizmeti sunmak için hesap, beslenme, yemek fotoğrafları,
             vücut ölçüleri, laboratuvar tahlilleri ve yapay zeka sohbet verilerini
-            işler. Veriler Supabase üzerinde saklanır; yapay zeka yanıtları için
-            gerekli içerik OpenAI ve Google Gemini gibi sağlayıcılara
-            gönderilebilir. Verileri reklam amacıyla satmayız.
+            kullanıcının açık rızasıyla işler. Veriler Supabase üzerinde
+            şifrelenerek ve RLS ile saklanır; analiz için gerekli içerik yalnızca
+            OpenAI (GPT-4o / Vision), Google Gemini, Fal.ai ve Groq’a
+            gönderilebilir. Verileri reklam veya profilleme amacıyla satmayız.
+            Uygulama içinden hesap ve veriler anında kalıcı olarak silinebilir.
           </p>
         </div>
 
         <nav class="toc" aria-label="Gizlilik politikası bölümleri">
           <a href="#s1">1. Veri Sorumlusu</a>
           <a href="#s2">2. Toplanan Veriler</a>
-          <a href="#s3">3. Amaçlar</a>
-          <a href="#s4">4. Üçüncü Taraflar</a>
-          <a href="#s5">5. Saklama</a>
-          <a href="#s6">6. Hesap Silme</a>
-          <a href="#s7">7. Çocuklar</a>
-          <a href="#s8">8. Haklarınız</a>
-          <a href="#s9">9. Uygulama İçi</a>
+          <a href="#s3">3. Sağlık &amp; Güvenlik</a>
+          <a href="#s4">4. Amaçlar</a>
+          <a href="#s5">5. Üçüncü Taraflar</a>
+          <a href="#s6">6. Saklama</a>
+          <a href="#s7">7. Hesap Silme</a>
+          <a href="#s8">8. Çocuklar</a>
+          <a href="#s9">9. Haklarınız</a>
+          <a href="#s10">10. Uygulama İçi</a>
         </nav>
       </article>
 
@@ -529,6 +599,14 @@
             </dd>
           </div>
         </dl>
+        <div class="note-box">
+          <strong>İletişim notu:</strong>
+          Gizlilik ve destek talepleriniz için
+          <a href="mailto:privacy@fitai.com">privacy@fitai.com</a> ve
+          <a href="mailto:support@fitai.com">support@fitai.com</a>
+          adreslerini kullanabilirsiniz. Gelen talepler
+          <strong>30 gün içerisinde</strong> işleme alınır.
+        </div>
       </section>
 
       <section class="card" id="s2">
@@ -591,7 +669,35 @@
       </section>
 
       <section class="card" id="s3">
-        <h2>3. Amaçlar</h2>
+        <h2>3. Hassas Sağlık Verileri ve Veri Güvenliği</h2>
+        <p>
+          Kan tahlilleri, kan şekeri, alerjiler, boy/kilo ve vücut analizi
+          fotoğrafları gibi hassas sağlık verileri yalnızca
+          <strong>kullanıcının açık rızası</strong> ile işlenir (KVKK / GDPR
+          özel nitelikli kişisel veri standartları).
+        </p>
+        <ul>
+          <li>
+            Veriler <strong>Supabase</strong> altyapısında <strong>şifreli</strong>
+            olarak saklanır.
+          </li>
+          <li>
+            Erişim <strong>RLS (Row Level Security)</strong> ile korunur; her
+            kullanıcı yalnızca kendi verilerine erişebilir.
+          </li>
+          <li>
+            Bu veriler istenildiği an uygulama içinden
+            <strong>kalıcı olarak silinebilir</strong>.
+          </li>
+          <li>
+            Sağlık verileri reklam, pazarlama veya üçüncü taraf profilleme için
+            kullanılmaz ve satılmaz.
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="s4">
+        <h2>4. Amaçlar</h2>
         <p>Verilerinizi aşağıdaki amaçlarla işleriz:</p>
         <ul>
           <li>Kişiselleştirilmiş diyet ve koçluk deneyimi sunmak</li>
@@ -602,28 +708,41 @@
         </ul>
       </section>
 
-      <section class="card" id="s4">
-        <h2>4. Üçüncü Taraflar ve Paylaşım</h2>
+      <section class="card" id="s5">
+        <h2>5. Üçüncü Taraflar ve Paylaşım</h2>
         <p>
-          Hizmet altyapısı ve yapay zeka özellikleri için güvenilir üçüncü taraf
-          sağlayıcılarla çalışırız. Verileriniz yalnızca hizmetin sunulması için
-          gerekli ölçüde paylaşılır.
+          Hizmet altyapısı ve yapay zeka özellikleri için aşağıdaki sağlayıcılarla
+          çalışırız. Verileriniz yalnızca hizmetin sunulması için gerekli ölçüde
+          paylaşılır.
         </p>
+        <h3>Altyapı</h3>
         <ul>
           <li>
-            <strong>Supabase</strong> — kimlik doğrulama, veritabanı ve depolama
+            <strong>Supabase</strong> — kimlik doğrulama (Auth), veritabanı ve
+            dosya depolama; şifreleme ve RLS ile korunur
           </li>
+        </ul>
+        <h3>Yapay Zeka Servis Sağlayıcıları</h3>
+        <ul>
           <li>
-            <strong>OpenAI</strong> — yapay zeka sohbet ve analiz yanıtları
+            <strong>OpenAI (GPT-4o / Vision)</strong> — metin ve görüntü tabanlı
+            analiz ile sohbet yanıtları
           </li>
           <li>
             <strong>Google Gemini</strong> — yapay zeka sohbet ve içerik analizi
           </li>
           <li>
-            <strong>Fal.ai</strong> ve benzeri yapay zeka API’leri — görüntü/analiz
-            işlemleri
+            <strong>Fal.ai</strong> — görüntü / analiz işlemleri
+          </li>
+          <li>
+            <strong>Groq</strong> — hızlı yapay zeka çıkarım ve yanıt üretimi
           </li>
         </ul>
+        <p>
+          Bu sağlayıcılara yalnızca analiz için gerekli olan anonim metin, tahlil
+          verisi ve görseller gönderilir; reklam veya profilleme amacıyla
+          kullanılmaz.
+        </p>
         <p>
           <strong>Verileriniz reklam amacıyla satılmaz.</strong> Yasal
           yükümlülükler, güvenlik veya hizmet sözleşmelerimizin gerektirdiği
@@ -631,21 +750,22 @@
         </p>
       </section>
 
-      <section class="card" id="s5">
-        <h2>5. Saklama Süresi</h2>
+      <section class="card" id="s6">
+        <h2>6. Saklama Süresi</h2>
         <p>
           Kişisel verileriniz, hesabınız aktif olduğu sürece ve hizmeti
-          sunabilmemiz için gerekli olduğu müddetçe saklanır. Hesap silme
-          talebinizden sonra, yasal saklama yükümlülükleri saklı kalmak kaydıyla,
-          verileriniz makul bir süre içinde silinir veya anonimleştirilir.
+          sunabilmemiz için gerekli olduğu müddetçe saklanır. Uygulama içi hesap
+          silmede veriler anında kalıcı olarak kaldırılır. E-posta ile yapılan
+          talepler 30 gün içinde işleme alınır; yasal saklama yükümlülükleri saklıdır.
         </p>
         <ul>
           <li>
-            Hesap ve profil verileri: hesap silinene veya silme talebi
-            işlenene kadar
+            Hesap ve profil verileri: hesap silinene kadar; uygulama içi silmede
+            anında kaldırılır
           </li>
           <li>
-            Medya ve yapay zeka geçmişi: hesap silme sonrası depolamadan kaldırılır
+            Medya ve yapay zeka geçmişi: hesap silme ile birlikte depolamadan
+            kalıcı olarak silinir
           </li>
           <li>
             Yasal / güvenlik kayıtları: yürürlükteki mevzuatın zorunlu kıldığı
@@ -654,12 +774,14 @@
         </ul>
       </section>
 
-      <section class="card" id="s6">
-        <h2>6. Hesap Silme</h2>
+      <section class="card" id="s7">
+        <h2>7. Hesap Silme</h2>
         <p>
           Hesabınızı ve ilişkili verilerinizi istediğiniz zaman silebilirsiniz.
-          Uygulama içinden veya e-posta ile talepte bulunabilirsiniz. Adım adım
-          talimatlar için bu sayfadaki
+          <strong>Uygulama içindeki “Hesabı Sil” butonuna tıklandığında</strong>
+          kullanıcının verileri ve <strong>Supabase Auth oturumu anında
+          (gerçek zamanlı)</strong> kalıcı olarak silinir. E-posta ile talep
+          seçeneği de mevcuttur. Adım adım talimatlar için
           <button
             type="button"
             class="inline-link"
@@ -680,28 +802,30 @@
           sekmesine geçin.
         </p>
         <p>
-          Talepler genellikle makul bir süre içinde (çoğu durumda 30 gün içinde)
-          işlenir. Onay e-postası veya destek yanıtı ile bilgilendirilirsiniz.
+          E-posta ile gelen silme talepleri
+          <strong>30 gün içerisinde</strong> işleme alınır.
+          <a href="mailto:privacy@fitai.com">privacy@fitai.com</a> /
+          <a href="mailto:support@fitai.com">support@fitai.com</a>
         </p>
       </section>
 
-      <section class="card" id="s7">
-        <h2>7. Çocukların Gizliliği</h2>
+      <section class="card" id="s8">
+        <h2>8. Çocukların Gizliliği ve Yaş Sınırı</h2>
         <p>
-          Fit AI, 13 yaşın altındaki çocuklara yönelik değildir. Bilerek 13 yaşın
-          altındaki kişilerden kişisel veri toplamayız. Böyle bir veri
-          fark edersek derhal sileriz. Ebeveyn veya vasi iseniz ve çocuğunuzun
-          veri paylaştığını düşünüyorsanız
+          Fit AI <strong>13 yaş altına yönelik değildir</strong> (hedef kitle:
+          13 yaş ve üzeri). Bilerek 13 yaş altındaki kişilerden kişisel veri
+          toplamayız. Böyle bir veri fark edersek derhal sileriz. Ebeveyn veya
+          vasi iseniz ve çocuğunuzun veri paylaştığını düşünüyorsanız
           <a href="mailto:privacy@fitai.com">privacy@fitai.com</a> adresine
           yazın.
         </p>
       </section>
 
-      <section class="card" id="s8">
-        <h2>8. Haklarınız</h2>
+      <section class="card" id="s9">
+        <h2>9. Haklarınız</h2>
         <p>
-          Yürürlükteki veri koruma mevzuatı (Birleşik Krallık GDPR / GDPR ve ilgili kanunlar)
-          kapsamında aşağıdaki haklara sahip olabilirsiniz:
+          Yürürlükteki veri koruma mevzuatı (KVKK, Birleşik Krallık GDPR / GDPR
+          ve ilgili kanunlar) kapsamında aşağıdaki haklara sahip olabilirsiniz:
         </p>
         <ul>
           <li>Verilerinize erişim talep etme</li>
@@ -709,17 +833,18 @@
           <li>Silme (“unutulma hakkı”) talep etme</li>
           <li>İşlemeyi kısıtlama veya itiraz etme</li>
           <li>Veri taşınabilirliği</li>
-          <li>Onayı geri çekme (onaya dayalı işlemlerde)</li>
+          <li>Onayı geri çekme (onaya dayalı işlemlerde, özellikle sağlık verileri)</li>
         </ul>
         <p>
           Haklarınızı kullanmak için
           <a href="mailto:privacy@fitai.com">privacy@fitai.com</a> adresine
-          başvurabilirsiniz. Talebinizi makul sürede yanıtlarız.
+          başvurabilirsiniz. Talepler <strong>30 gün içerisinde</strong>
+          işleme alınır.
         </p>
       </section>
 
-      <section class="card" id="s9">
-        <h2>9. Uygulama İçi Politika</h2>
+      <section class="card" id="s10">
+        <h2>10. Uygulama İçi Politika</h2>
         <p>
           Bu gizlilik politikasının güncel sürümü Fit AI uygulaması içinde ve bu
           web sayfasında yayınlanır. Önemli değişikliklerde uygulama içi bildirim
@@ -763,7 +888,7 @@
       </article>
 
       <section class="card">
-        <h2>Uygulama İçinden Silme</h2>
+        <h2>Uygulama İçinden Silme (Anında)</h2>
         <p>Fit AI mobil uygulamasında şu adımları izleyin:</p>
         <ol class="steps">
           <li>Fit AI uygulamasını açın ve hesabınıza giriş yapın.</li>
@@ -772,17 +897,20 @@
           <li><strong>Hesabı Sil</strong> seçeneğine dokunun.</li>
           <li>Onay ekranındaki uyarıyı okuyun ve silme işlemini onaylayın.</li>
         </ol>
-        <p>
-          İşlem tamamlandığında hesabınız devre dışı bırakılır ve ilişkili
-          veriler silme sürecine alınır.
-        </p>
+        <div class="note-box">
+          <strong>Anında silme:</strong>
+          “Hesabı Sil” onaylandığında kullanıcının uygulama verileri ve
+          <strong>Supabase Auth oturumu anında (gerçek zamanlı)</strong>
+          kalıcı olarak silinir. Bu işlem geri alınamaz.
+        </div>
       </section>
 
       <section class="card">
         <h2>E-posta ile Talep</h2>
         <p>
           Uygulamaya erişiminiz yoksa veya destek almak istiyorsanız e-posta ile
-          talepte bulunabilirsiniz:
+          talepte bulunabilirsiniz. Gelen talepler
+          <strong>30 gün içerisinde</strong> işleme alınır:
         </p>
         <ol class="steps">
           <li>
@@ -805,8 +933,10 @@
           </li>
         </ol>
         <p>
-          Destek için:
+          Destek:
           <a href="mailto:support@fitai.com">support@fitai.com</a>
+          · Gizlilik:
+          <a href="mailto:privacy@fitai.com">privacy@fitai.com</a>
         </p>
       </section>
 
@@ -817,6 +947,7 @@
             <h4>Silinen / Kaldırılan</h4>
             <ul>
               <li>Hesap profili (ad, soyad, e-posta bağlantısı)</li>
+              <li>Supabase Auth oturumu ve kimlik doğrulama kaydı</li>
               <li>Fiziksel ve sağlık profili verileri</li>
               <li>Öğün, su, kilo ve market listesi kayıtları</li>
               <li>Yemek / vücut / tahlil fotoğrafları ve belgeler</li>
