@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fit AI Privacy Policy and Account Deletion — KARAHAN SOFT LTD (KARAHAN TECHNOLOGIES)" />
+  <title>Fit AI — Privacy Policy &amp; Account Deletion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4faf6;
+      --bg-soft: #e8f5ee;
+      --surface: #ffffff;
+      --ink: #0f1f17;
+      --ink-muted: #3d5a4c;
+      --ink-soft: #5a7568;
+      --brand: #1a7a4c;
+      --brand-dark: #0f5c38;
+      --brand-light: #2db86f;
+      --accent: #c8f0d8;
+      --border: #d4e8dc;
+      --danger: #b42318;
+      --danger-bg: #fef3f2;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 4px 24px rgba(15, 92, 56, 0.08);
+      --max: 820px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 80% 50% at 10% -10%, rgba(45, 184, 111, 0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 90% 0%, rgba(26, 122, 76, 0.12), transparent),
+        linear-gradient(180deg, var(--bg) 0%, #eef7f1 40%, var(--bg) 100%);
+      color: var(--ink);
+      line-height: 1.65;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--brand); text-decoration: none; font-weight: 500; }
+    a:hover { color: var(--brand-dark); text-decoration: underline; }
+
+    .wrap {
+      width: min(100% - 2rem, var(--max));
+      margin-inline: auto;
+      padding-block: 2rem 3.5rem;
+    }
+
+    /* Header */
+    .site-header {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, var(--brand-light), var(--brand-dark));
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 16px rgba(26, 122, 76, 0.28);
+    }
+
+    .brand-icon svg { width: 24px; height: 24px; fill: #fff; }
+
+    .brand-name {
+      font-family: "Outfit", sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      color: var(--brand-dark);
+    }
+
+    .site-header h1 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .meta-line {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    .meta-line strong { color: var(--ink-muted); font-weight: 600; }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.35rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      margin-bottom: 1.5rem;
+      position: sticky;
+      top: 0.75rem;
+      z-index: 20;
+    }
+
+    .tab-btn {
+      flex: 1;
+      appearance: none;
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: clamp(0.82rem, 2.5vw, 0.95rem);
+      font-weight: 600;
+      color: var(--ink-soft);
+      padding: 0.75rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .tab-btn:hover { color: var(--brand-dark); background: var(--bg-soft); }
+
+    .tab-btn[aria-selected="true"] {
+      background: linear-gradient(145deg, var(--brand), var(--brand-dark));
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(26, 122, 76, 0.3);
+    }
+
+    .tab-btn:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+
+    /* Panels */
+    .panel { display: none; animation: fadeIn 0.28s ease; }
+    .panel.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(1.25rem, 3.5vw, 2rem);
+      margin-bottom: 1.15rem;
+    }
+
+    .card h2 {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      color: var(--brand-dark);
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .card h3 {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 1.35rem 0 0.55rem;
+    }
+
+    .card p { color: var(--ink-muted); margin-bottom: 0.85rem; }
+
+    .card ul, .card ol {
+      margin: 0.4rem 0 0.9rem 1.15rem;
+      color: var(--ink-muted);
+    }
+
+    .card li { margin-bottom: 0.4rem; padding-left: 0.2rem; }
+    .card li strong { color: var(--ink); }
+
+    .intro {
+      font-size: 1.02rem;
+      color: var(--ink-muted);
+    }
+
+    .summary-box {
+      background: linear-gradient(135deg, var(--bg-soft), #f0faf4);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brand);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.15rem;
+      margin: 1rem 0 0.25rem;
+    }
+
+    .summary-box .label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 0.35rem;
+    }
+
+    .summary-box p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: minmax(7rem, 10rem) 1fr;
+      gap: 0.5rem 1rem;
+      padding: 0.65rem 0.85rem;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+    }
+
+    .info-row dt {
+      font-weight: 600;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+    }
+
+    .info-row dd { color: var(--ink); word-break: break-word; }
+
+    .badge-list {
+      list-style: none;
+      margin-left: 0 !important;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .badge-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.75rem 0.9rem;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      margin: 0;
+    }
+
+    .badge-list li:hover { border-color: var(--border); }
+
+    .badge {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--brand-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      margin-top: 0.1rem;
+    }
+
+    .badge.no {
+      background: #fce8e6;
+      color: var(--danger);
+    }
+
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      margin-left: 0 !important;
+    }
+
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 0.9rem 0.9rem 0.9rem 3.25rem;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.55rem;
+      border: 1px solid var(--border);
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.7rem;
+      height: 1.7rem;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+
+    .callout {
+      background: var(--danger-bg);
+      border: 1px solid #fecdca;
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.15rem;
+      margin: 1rem 0;
+    }
+
+    .callout p { margin: 0; color: #7a271a; font-size: 0.93rem; }
+
+    .two-col {
+      display: grid;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    @media (min-width: 640px) {
+      .two-col { grid-template-columns: 1fr 1fr; }
+    }
+
+    .col-box {
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .col-box.keep { background: #fffbeb; border-color: #fde68a; }
+    .col-box.delete { background: var(--bg-soft); border-color: var(--border); }
+
+    .col-box h4 {
+      font-family: "Outfit", sans-serif;
+      font-size: 0.95rem;
+      margin-bottom: 0.55rem;
+      color: var(--ink);
+    }
+
+    .col-box ul { margin: 0 0 0 1rem; font-size: 0.9rem; }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.75rem 0 0.25rem;
+    }
+
+    .toc a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.7rem;
+      background: var(--bg-soft);
+      border-radius: 999px;
+      color: var(--brand-dark);
+      text-decoration: none;
+    }
+
+    .toc a:hover { background: var(--accent); }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    .site-footer p { margin-bottom: 0.35rem; }
+
+    @media (max-width: 480px) {
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+      }
+      .tabs { border-radius: 16px; flex-direction: column; }
+      .tab-btn { border-radius: 12px; }
+    }
+
+    @media print {
+      .tabs { position: static; box-shadow: none; }
+      .panel { display: block !important; page-break-before: always; }
+      .panel:first-of-type { page-break-before: avoid; }
+      body { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <div class="brand-mark">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C12 2 5 9.5 5 14.5C5 18.09 8.13 21 12 21C15.87 21 19 18.09 19 14.5C19 9.5 12 2 12 2Z"/>
+          </svg>
+        </div>
+        <span class="brand-name">Fit AI</span>
+      </div>
+      <h1>Privacy &amp; Account</h1>
+      <p class="meta-line">
+        <strong>KARAHAN SOFT LTD</strong> · KARAHAN TECHNOLOGIES<br />
+        Last updated: <strong>25 September 2026</strong>
+      </p>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Privacy sections">
+      <button
+        type="button"
+        class="tab-btn"
+        role="tab"
+        id="tab-privacy"
+        aria-selected="true"
+        aria-controls="panel-privacy"
+        data-tab="privacy"
+      >
+        Gizlilik Politikası
+      </button>
+      <button
+        type="button"
+        class="tab-btn"
+        role="tab"
+        id="tab-deletion"
+        aria-selected="false"
+        aria-controls="panel-deletion"
+        data-tab="deletion"
+      >
+        Hesap Silme Talebi
+      </button>
+    </div>
+
+    <!-- ========== PANEL 1: Privacy Policy ========== -->
+    <div
+      id="panel-privacy"
+      class="panel active"
+      role="tabpanel"
+      aria-labelledby="tab-privacy"
+    >
+      <article class="card">
+        <h2>Gizlilik Politikası / Privacy Policy</h2>
+        <p class="intro">
+          Bu politika, <strong>KARAHAN SOFT LTD (KARAHAN TECHNOLOGIES)</strong>
+          tarafından sunulan <strong>Fit AI</strong> mobil uygulaması için geçerlidir.
+        </p>
+        <div class="summary-box">
+          <span class="label">English Summary</span>
+          <p>
+            Fit AI processes account, nutrition, meal photos, body measurements,
+            lab tests, and AI chat data to deliver the service. Data is stored on
+            Supabase; content required for AI responses may be sent to providers
+            such as OpenAI and Google Gemini. We do not sell data for advertising.
+          </p>
+        </div>
+
+        <nav class="toc" aria-label="Privacy policy sections">
+          <a href="#s1">1. Veri Sorumlusu</a>
+          <a href="#s2">2. Toplanan Veriler</a>
+          <a href="#s3">3. Amaçlar</a>
+          <a href="#s4">4. Üçüncü Taraflar</a>
+          <a href="#s5">5. Saklama</a>
+          <a href="#s6">6. Hesap Silme</a>
+          <a href="#s7">7. Çocuklar</a>
+          <a href="#s8">8. Haklarınız</a>
+          <a href="#s9">9. Uygulama İçi</a>
+        </nav>
+      </article>
+
+      <section class="card" id="s1">
+        <h2>1. Veri Sorumlusu</h2>
+        <p>
+          Fit AI uygulaması kapsamında kişisel verilerinizin işlenmesinden sorumlu
+          kuruluş aşağıdaki gibidir:
+        </p>
+        <dl class="info-grid">
+          <div class="info-row">
+            <dt>Unvan</dt>
+            <dd>KARAHAN SOFT LTD (KARAHAN TECHNOLOGIES)</dd>
+          </div>
+          <div class="info-row">
+            <dt>Company No</dt>
+            <dd>17444043</dd>
+          </div>
+          <div class="info-row">
+            <dt>Adres</dt>
+            <dd>SUITE 11190 5 BRAYFORD SQUARE, LONDON, UNITED KINGDOM, E1 0SG</dd>
+          </div>
+          <div class="info-row">
+            <dt>Kayıt Bölgesi</dt>
+            <dd>England and Wales</dd>
+          </div>
+          <div class="info-row">
+            <dt>Şirket Türü</dt>
+            <dd>Private Company Limited by Shares</dd>
+          </div>
+          <div class="info-row">
+            <dt>Gizlilik</dt>
+            <dd><a href="mailto:privacy@fitai.com">privacy@fitai.com</a></dd>
+          </div>
+          <div class="info-row">
+            <dt>Destek</dt>
+            <dd><a href="mailto:support@fitai.com">support@fitai.com</a></dd>
+          </div>
+          <div class="info-row">
+            <dt>Web</dt>
+            <dd>
+              <a href="https://www.karahantechnologies.com/" rel="noopener noreferrer" target="_blank">
+                https://www.karahantechnologies.com/
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="card" id="s2">
+        <h2>2. Toplanan Veriler</h2>
+        <p>Hizmeti sunabilmek için aşağıdaki kategorilerde veri işleyebiliriz:</p>
+        <ul class="badge-list">
+          <li>
+            <span class="badge" aria-hidden="true">01</span>
+            <div>
+              <strong>Kimlik ve Hesap</strong><br />
+              Ad, soyad, e-posta, UUID, OAuth bilgileri
+            </div>
+          </li>
+          <li>
+            <span class="badge" aria-hidden="true">02</span>
+            <div>
+              <strong>Fiziksel ve Sağlık Profili</strong><br />
+              Yaş, boy, kilo, cinsiyet, vücut ölçüleri, kan şekeri,
+              tahlil verileri/belgeleri, alerjiler
+            </div>
+          </li>
+          <li>
+            <span class="badge" aria-hidden="true">03</span>
+            <div>
+              <strong>Beslenme ve Takip</strong><br />
+              Öğün kayıtları, su tüketimi, kilo geçmişi, market listesi
+            </div>
+          </li>
+          <li>
+            <span class="badge" aria-hidden="true">04</span>
+            <div>
+              <strong>Fotoğraf / Medya</strong><br />
+              Yemek fotoğrafları, vücut değişim fotoğrafları,
+              tahlil belgeleri/PDF/görseller
+            </div>
+          </li>
+          <li>
+            <span class="badge" aria-hidden="true">05</span>
+            <div>
+              <strong>Yapay Zeka Koçluk</strong><br />
+              Sohbet mesajları, koçluk geçmişi ve tahlil/fotoğraf analiz verileri
+            </div>
+          </li>
+          <li>
+            <span class="badge" aria-hidden="true">06</span>
+            <div>
+              <strong>Teknik Veriler</strong><br />
+              Cihaz modeli, işletim sistemi, uygulama sürümü
+            </div>
+          </li>
+          <li>
+            <span class="badge no" aria-hidden="true">✕</span>
+            <div>
+              <strong>Toplanmayan Veriler</strong><br />
+              Hassas konum, mikrofon, rehber, SMS, AdMob reklam kimliği,
+              kredi kartı numarası
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="s3">
+        <h2>3. Amaçlar</h2>
+        <p>Verilerinizi aşağıdaki amaçlarla işleriz:</p>
+        <ul>
+          <li>Kişiselleştirilmiş diyet ve koçluk deneyimi sunmak</li>
+          <li>Fotoğraftan kalori/makro ve tahlil analizi sağlamak</li>
+          <li>Yapay zeka yanıt üretimi ve koçluk önerileri oluşturmak</li>
+          <li>Yerel hatırlatıcılar (ör. su/öğün bildirimleri) çalıştırmak</li>
+          <li>Hesap güvenliği, dolandırıcılık önleme ve hizmet sürekliliği</li>
+        </ul>
+      </section>
+
+      <section class="card" id="s4">
+        <h2>4. Üçüncü Taraflar ve Paylaşım</h2>
+        <p>
+          Hizmet altyapısı ve yapay zeka özellikleri için güvenilir üçüncü taraf
+          sağlayıcılarla çalışırız. Verileriniz yalnızca hizmetin sunulması için
+          gerekli ölçüde paylaşılır.
+        </p>
+        <ul>
+          <li>
+            <strong>Supabase</strong> — kimlik doğrulama, veritabanı ve depolama
+            (auth / db / storage)
+          </li>
+          <li>
+            <strong>OpenAI</strong> — AI sohbet ve analiz yanıtları
+          </li>
+          <li>
+            <strong>Google Gemini</strong> — AI sohbet ve içerik analizi
+          </li>
+          <li>
+            <strong>Fal.ai</strong> ve benzeri AI API’leri — görüntü/analiz
+            işlemleri
+          </li>
+        </ul>
+        <p>
+          <strong>Verileriniz reklam amacıyla satılmaz.</strong> Yasal
+          yükümlülükler, güvenlik veya hizmet sözleşmelerimizin gerektirdiği
+          durumlar dışında üçüncü taraflarla paylaşım yapılmaz.
+        </p>
+      </section>
+
+      <section class="card" id="s5">
+        <h2>5. Saklama Süresi</h2>
+        <p>
+          Kişisel verileriniz, hesabınız aktif olduğu sürece ve hizmeti
+          sunabilmemiz için gerekli olduğu müddetçe saklanır. Hesap silme
+          talebinizden sonra, yasal saklama yükümlülükleri saklı kalmak kaydıyla,
+          verileriniz makul bir süre içinde silinir veya anonimleştirilir.
+        </p>
+        <ul>
+          <li>
+            Hesap ve profil verileri: hesap silinene veya silme talebi
+            işlenene kadar
+          </li>
+          <li>
+            Medya ve AI geçmişi: hesap silme sonrası depolamadan kaldırılır
+          </li>
+          <li>
+            Yasal / güvenlik kayıtları: yürürlükteki mevzuatın zorunlu kıldığı
+            süre kadar tutulabilir
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="s6">
+        <h2>6. Hesap Silme</h2>
+        <p>
+          Hesabınızı ve ilişkili verilerinizi istediğiniz zaman silebilirsiniz.
+          Uygulama içinden veya e-posta ile talepte bulunabilirsiniz. Adım adım
+          talimatlar için bu sayfadaki
+          <button
+            type="button"
+            class="inline-link"
+            style="
+              background: none;
+              border: none;
+              color: var(--brand);
+              font: inherit;
+              font-weight: 600;
+              cursor: pointer;
+              padding: 0;
+              text-decoration: underline;
+            "
+            data-goto="deletion"
+          >
+            Hesap Silme Talebi
+          </button>
+          sekmesine geçin.
+        </p>
+        <p>
+          Talepler genellikle makul bir süre içinde (çoğu durumda 30 gün içinde)
+          işlenir. Onay e-postası veya destek yanıtı ile bilgilendirilirsiniz.
+        </p>
+      </section>
+
+      <section class="card" id="s7">
+        <h2>7. Çocukların Gizliliği</h2>
+        <p>
+          Fit AI, 13 yaşın altındaki çocuklara yönelik değildir. Bilerek 13 yaşın
+          altındaki kişilerden kişisel veri toplamayız. Böyle bir veri
+          fark edersek derhal sileriz. Ebeveyn veya vasi iseniz ve çocuğunuzun
+          veri paylaştığını düşünüyorsanız
+          <a href="mailto:privacy@fitai.com">privacy@fitai.com</a> adresine
+          yazın.
+        </p>
+      </section>
+
+      <section class="card" id="s8">
+        <h2>8. Haklarınız</h2>
+        <p>
+          Yürürlükteki veri koruma mevzuatı (UK GDPR / GDPR ve ilgili kanunlar)
+          kapsamında aşağıdaki haklara sahip olabilirsiniz:
+        </p>
+        <ul>
+          <li>Verilerinize erişim talep etme</li>
+          <li>Düzeltme (yanlış veya eksik verilerin güncellenmesi)</li>
+          <li>Silme (“unutulma hakkı”) talep etme</li>
+          <li>İşlemeyi kısıtlama veya itiraz etme</li>
+          <li>Veri taşınabilirliği</li>
+          <li>Onayı geri çekme (onaya dayalı işlemlerde)</li>
+        </ul>
+        <p>
+          Haklarınızı kullanmak için
+          <a href="mailto:privacy@fitai.com">privacy@fitai.com</a> adresine
+          başvurabilirsiniz. Talebinizi makul sürede yanıtlarız.
+        </p>
+      </section>
+
+      <section class="card" id="s9">
+        <h2>9. Uygulama İçi Politika</h2>
+        <p>
+          Bu gizlilik politikasının güncel sürümü Fit AI uygulaması içinde ve bu
+          web sayfasında yayınlanır. Önemli değişikliklerde uygulama içi bildirim
+          veya e-posta ile bilgilendirme yapılabilir. Politikayı düzenli olarak
+          gözden geçirmenizi öneririz.
+        </p>
+        <p>
+          Son güncelleme tarihi: <strong>25 Eylül 2026</strong>.
+        </p>
+        <p>
+          Marka ailesi:
+          <a href="https://www.karahantechnologies.com/" rel="noopener noreferrer" target="_blank">
+            KARAHAN TECHNOLOGIES
+          </a>
+          (karahantechnologies.com).
+        </p>
+      </section>
+    </div>
+
+    <!-- ========== PANEL 2: Account Deletion ========== -->
+    <div
+      id="panel-deletion"
+      class="panel"
+      role="tabpanel"
+      aria-labelledby="tab-deletion"
+      hidden
+    >
+      <article class="card">
+        <h2>Hesap Silme Talebi / Account Deletion</h2>
+        <p class="intro">
+          Fit AI hesabınızı ve ilişkili kişisel verilerinizi kalıcı olarak
+          silmek için aşağıdaki yöntemlerden birini kullanabilirsiniz.
+        </p>
+        <div class="callout">
+          <p>
+            <strong>Uyarı:</strong> Hesap silme işlemi geri alınamaz. Öğün
+            kayıtları, fotoğraflar, AI sohbet geçmişi ve profil verileriniz
+            silinecektir.
+          </p>
+        </div>
+      </article>
+
+      <section class="card">
+        <h2>Uygulama İçinden Silme</h2>
+        <p>Fit AI mobil uygulamasında şu adımları izleyin:</p>
+        <ol class="steps">
+          <li>Fit AI uygulamasını açın ve hesabınıza giriş yapın.</li>
+          <li><strong>Profil</strong> sekmesine gidin.</li>
+          <li><strong>Hesabım</strong> bölümünü açın.</li>
+          <li><strong>Hesabı Sil</strong> seçeneğine dokunun.</li>
+          <li>Onay ekranındaki uyarıyı okuyun ve silme işlemini onaylayın.</li>
+        </ol>
+        <p>
+          İşlem tamamlandığında hesabınız devre dışı bırakılır ve ilişkili
+          veriler silme sürecine alınır.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>E-posta ile Talep</h2>
+        <p>
+          Uygulamaya erişiminiz yoksa veya destek almak istiyorsanız e-posta ile
+          talepte bulunabilirsiniz:
+        </p>
+        <ol class="steps">
+          <li>
+            <a href="mailto:privacy@fitai.com?subject=Fit%20AI%20Account%20Deletion%20Request">
+              privacy@fitai.com
+            </a>
+            adresine e-posta gönderin.
+          </li>
+          <li>
+            Konu satırına örneğin:
+            <em>“Fit AI Account Deletion Request”</em> yazın.
+          </li>
+          <li>
+            Mesaj gövdesinde kayıtlı e-posta adresinizi, ad-soyad bilginizi ve
+            mümkünse kullanıcı kimliğinizi (UUID) belirtin.
+          </li>
+          <li>
+            Kimlik doğrulama için kayıtlı hesabınızdan yazmanız önerilir;
+            gerekirse ek doğrulama isteyebiliriz.
+          </li>
+        </ol>
+        <p>
+          Destek için:
+          <a href="mailto:support@fitai.com">support@fitai.com</a>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Silinen ve Saklanabilecek Veriler</h2>
+        <div class="two-col">
+          <div class="col-box delete">
+            <h4>Silinen / Kaldırılan</h4>
+            <ul>
+              <li>Hesap profili (ad, soyad, e-posta bağlantısı)</li>
+              <li>Fiziksel ve sağlık profili verileri</li>
+              <li>Öğün, su, kilo ve market listesi kayıtları</li>
+              <li>Yemek / vücut / tahlil fotoğrafları ve belgeler</li>
+              <li>AI sohbet ve koçluk geçmişi</li>
+              <li>Uygulama tercihlerine ait kullanıcıya özgü veriler</li>
+            </ul>
+          </div>
+          <div class="col-box keep">
+            <h4>Saklanabilecek (sınırlı)</h4>
+            <ul>
+              <li>
+                Yasal yükümlülükler kapsamında tutulması zorunlu kayıtlar
+              </li>
+              <li>
+                Dolandırıcılık / güvenlik araştırması için gerekli anonim veya
+                sınırlı loglar
+              </li>
+              <li>
+                Faturalama veya sözleşme kaynaklı saklama sürelerine tabi
+                işlem kayıtları (varsa)
+              </li>
+              <li>
+                Anonimleştirilmiş istatistikler (kişiyi tanımlamaz)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top: 1rem;">
+          Veri sorumlusu:
+          <strong>KARAHAN SOFT LTD (KARAHAN TECHNOLOGIES)</strong>,
+          Company No <strong>17444043</strong>,
+          SUITE 11190 5 BRAYFORD SQUARE, LONDON, UNITED KINGDOM, E1 0SG.
+        </p>
+      </section>
+    </div>
+
+    <footer class="site-footer">
+      <p>© 2026 Karahan Technologies. All rights reserved. | London, United Kingdom</p>
+      <p>
+        KARAHAN SOFT LTD · Company No 17444043 · Registered in England and Wales
+      </p>
+      <p>
+        <a href="https://www.karahantechnologies.com/" rel="noopener noreferrer" target="_blank">
+          karahantechnologies.com
+        </a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll(".tab-btn");
+      var panels = {
+        privacy: document.getElementById("panel-privacy"),
+        deletion: document.getElementById("panel-deletion"),
+      };
+
+      function activate(name) {
+        tabs.forEach(function (btn) {
+          var selected = btn.getAttribute("data-tab") === name;
+          btn.setAttribute("aria-selected", selected ? "true" : "false");
+        });
+        Object.keys(panels).forEach(function (key) {
+          var panel = panels[key];
+          var on = key === name;
+          panel.classList.toggle("active", on);
+          if (on) {
+            panel.removeAttribute("hidden");
+          } else {
+            panel.setAttribute("hidden", "");
+          }
+        });
+        if (history.replaceState) {
+          history.replaceState(null, "", "#" + name);
+        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      tabs.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          activate(btn.getAttribute("data-tab"));
+        });
+      });
+
+      document.querySelectorAll("[data-goto]").forEach(function (el) {
+        el.addEventListener("click", function () {
+          activate(el.getAttribute("data-goto"));
+        });
+      });
+
+      var hash = (location.hash || "").replace("#", "");
+      if (hash === "deletion" || hash === "privacy") {
+        activate(hash);
+      }
+    })();
+  </script>
+</body>
+</html>
